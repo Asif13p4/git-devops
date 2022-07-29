@@ -1,0 +1,7 @@
+- name: Playbook1
+  hosts: server1
+  tasks:
+    - name: install the git
+      yum:
+        name: git
+        state: present
