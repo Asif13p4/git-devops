@@ -44,3 +44,40 @@ GO
 
 
 SELECT * FROM dbo.Customers;
+
+
+
+
+IF EXISTS (
+SELECT *
+FROM INFORMATION_SCHEMA.ROUTINES
+WHERE SPECIFIC_SCHEMA = N
+AND SPECIFIC_NAME = N'getCustomer'
+)
+DROP PROCEDURE dbo.getCustomer
+GO
+-- Create the stored procedure in the specified schema
+CREATE PROCEDURE dbo.getCustomer
+@ID int
+-- add more stored procedure parameters here
+AS
+-- body of the stored procedure
+SELECT c.CustomerId,
+c.Name,
+c.Location,
+c.Email
+FROM dbo.Customers c
+WHERE c.CustomerId = @
+FOR JSON PATH
+Occurrences. Now type getCustomer and all to dbo.
+N'dbo'
+'getCustomer'
+ID
+
+
+GO
+-- example to execute the stored procedure we just created
+EXECUTE dbo.getCustomer 1
+GO
+
+
