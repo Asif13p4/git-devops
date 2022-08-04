@@ -47,7 +47,6 @@ SELECT * FROM dbo.Customers;
 
 
 
-
 IF EXISTS (
 SELECT *
 FROM INFORMATION_SCHEMA.ROUTINES
@@ -67,14 +66,8 @@ c.Name,
 c.Location,
 c.Email
 FROM dbo.Customers c
-WHERE c.CustomerId = @
+WHERE c.CustomerId = @ID
 FOR JSON PATH
-Occurrences. Now type getCustomer and all to dbo.
-N'dbo'
-'getCustomer'
-ID
-
-
 GO
 -- example to execute the stored procedure we just created
 EXECUTE dbo.getCustomer 1
